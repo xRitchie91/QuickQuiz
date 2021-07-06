@@ -49,7 +49,7 @@ function init() {
 }
 
 // clears details
-function clearDetails() {
+function detailsReset() {
     mainContent.innerHTML = "";
 }
 
@@ -83,6 +83,49 @@ function startQuiz(questions) {
     startQuestions();
 }
 
+function questionOrder(arr) {
+    if (test) {console.log("questionOrder");}
 
+    let randomQuestions = [];
+
+    for (let i=0; i<arr.length; i+1) {
+        randomQuestions.push(arr[i]);
+    }
+    return randomQuestions;
+}
+
+// presents the user with question
+function startQuestions() {
+    if (test) {console.log("startQuestions");}
+
+// reset time    
+quizElapsedTime = 0;
+
+// exits quiz if questions completed
+if (quiz.length === 0) {
+    quizEnd();
+    return;
+}
+
+// current question
+currentQues = quiz.pop();
+
+// clears html for questions
+detailsReset();
+
+// displays build
+let question = document.createElement("h1");
+
+question.setAttribute("question", currentQues.title);
+question.textContent = currentQues.title;
+mainContent.appendChild(question)
+
+// creates container for answers
+let choices = document.createElement("ul");
+choices.setAttribute("id","choices");
+mainContent.appendChild(choices);
+
+
+}
 // Event listeners/Buttons
 topScores.addEventListener("click", topScores);
