@@ -37,6 +37,15 @@ function init() {
     startQuiz.setAttribute("id", "startQuiz");
     startQuiz.setAttribute("class", "btn");
     startQuiz.textContent = "Let's Begin!";
+
+    mainContent.appendChild(heading);
+    mainContent.appendChild(instructions);
+    mainContent.appendChild(startQuiz);
+
+    startQuiz.addEventListener("click", function () {
+        quizName = "QuickQuiz";
+        playQuiz(questions);
+    });
 }
 
 
