@@ -65,14 +65,14 @@ function reset() {
 
 // starts the quiz timer
 quizCountdown = quiz.length;
-if (test) {console.log("duration:",quizCountdown);}
+if (test) { console.log("duration:", quizCountdown); }
 
 startQuizCountdown();
 renderTimer();
 
 // start questions
 function startQuiz(questions) {
-    if (test) {console.log("startQuiz");}
+    if (test) { console.log("startQuiz"); }
 
     quiz = questionOrder(questions);
 
@@ -84,11 +84,11 @@ function startQuiz(questions) {
 }
 
 function questionOrder(arr) {
-    if (test) {console.log("questionOrder");}
+    if (test) { console.log("questionOrder"); }
 
     let randomQuestions = [];
 
-    for (let i=0; i<arr.length; i+1) {
+    for (let i = 0; i < arr.length; i + 1) {
         randomQuestions.push(arr[i]);
     }
     return randomQuestions;
@@ -96,36 +96,77 @@ function questionOrder(arr) {
 
 // presents the user with question
 function startQuestions() {
-    if (test) {console.log("startQuestions");}
+    if (test) { console.log("startQuestions"); }
 
-// reset time    
-quizElapsedTime = 0;
+    // reset time    
+    quizElapsedTime = 0;
 
-// exits quiz if questions completed
-if (quiz.length === 0) {
-    quizEnd();
-    return;
+    // exits quiz if questions completed
+    if (quiz.length === 0) {
+        quizEnd();
+        return;
+    }
+
+    // current question
+    currentQues = quiz.pop();
+
+    // clears html for questions
+    detailsReset();
+
+    // displays build
+    let question = document.createElement("h1");
+
+    question.setAttribute("question", currentQues.title);
+    question.textContent = currentQues.title;
+    mainContent.appendChild(question)
+
+    // creates container for answers
+    let choices = document.createElement("ul");
+    choices.setAttribute("id", "choices");
+    mainContent.appendChild(choices);
+
+    // displays answers
+    for (let i = 0; i < currentQues.choices.length; i + 1) {
+        // choices variable 
+        let choicesList = document.createElement("li");
+        choicesList.setAttribute("choice-value", currentQues.choices[i]);
+        choicesList.setAttribute("id", "quesNumber-" + i);
+        choicesList.textContent = currentQues.choices[i];
+        // add choices to page
+        choices.appendChild(choicesList)
+    }
+
+    if (test) { console.log("cur", currentQues); }
+
+    // user input
+    choices.addEventListener("click", function () {
+        answerScore(currentQues);
+    });
 }
 
-// current question
-currentQues = quiz.pop();
-
-// clears html for questions
-detailsReset();
-
-// displays build
-let question = document.createElement("h1");
-
-question.setAttribute("question", currentQues.title);
-question.textContent = currentQues.title;
-mainContent.appendChild(question)
-
-// creates container for answers
-let choices = document.createElement("ul");
-choices.setAttribute("id","choices");
-mainContent.appendChild(choices);
-
-
+function answerScore(cur) {
+    if (test) { console.log("answerScore"); }
+    var e = event.target;
+    if (e.matches("li")) {
+        let answerSelected = e.textContent;
+        if (test) { console.log("answerSelected quiz" + answerSelected); }
+        if (answerSelected === cur.answer) {
+            score += quizCountdown;
+        } else {
+            if (test) { console.log("Incorrect!"); }
+            // cut quiz time
+            quizCountdown -= 10;
+        }
+        if (test) { console.log("selected", answerSelected); }
+            displayAnswer(cur);
+    }
 }
+
+function displayAnswer(cur) {
+    if (test) {console.log("displayAnswer");}
+    if (test) {console.log("");}
+}
+
+
 // Event listeners/Buttons
 topScores.addEventListener("click", topScores);
