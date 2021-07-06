@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="styleshee" href="assets/style.css">
-    <link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/timer-clock_23f2-fe0f.png">
+    <link rel="icon"
+        href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/timer-clock_23f2-fe0f.png">
     <title>QuickQuiz</title>
 </head>
 
+<header>
+    <h1>Welcome to QuickQuiz!</h1>
+    <h2>The timed quiz application</h2>
+</header>
+
 <body>
-    <section class="quiz-content">
-        <div><button class="restart-quiz" id="restart-quiz">Restart Quiz</button></div>
-        <div><button class="topscores" id="top-scores">View High Scores</button></div>
+    <section class="content">
+        <div class="countdown" id="countdown"></div>
+        <div><button class="start" id="start">Begin Quiz</button></div>
     </section>
-    
+
 </body>
+
+<footer class="footer">
+    <div><button class="restart-quiz" id="restart-quiz">Restart Quiz</button></div>
+    <div><button class="topscores" id="topscores">View High Scores</button></div>
+</footer>
 
 <script src="assets/script.js"></script>
 <script src="assets/questions.js"></script>
+
 </html>
