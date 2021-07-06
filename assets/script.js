@@ -21,12 +21,12 @@ function init() {
     reset();
 
     // main page heading
-    let heading = document.createElement("heading");
-    heading.setAttribute("id", "heading");
-    heading.textContent = "QuickQuiz is a timed quiz application."
+    let mainHeading = document.createElement("p");
+    mainHeading.setAttribute("id", "heading");
+    mainHeading.textContent = "QuickQuiz is a timed quiz application."
 
     // quiz instructions
-    let instructions = document.createElement("instructions");
+    let instructions = document.createElement("p");
     instructions.setAttribute("id", "instructions");
     instructions.textContent = "You will have 30 seconds starting the quiz. Each correct answer will add time to your countdown timer to complete the quiz."
 
@@ -36,7 +36,7 @@ function init() {
     startQuiz.setAttribute("class", "btn");
     startQuiz.textContent = "Let's Begin!";
 
-    mainContent.appendChild(heading);
+    mainContent.appendChild(mainHeading);
     mainContent.appendChild(instructions);
     mainContent.appendChild(startQuiz);
 
@@ -201,6 +201,51 @@ function startQuizCountdown() {
 function pauseTimer() {
     quizTime = 0;
     clearInterval(quizInterval);
+}
+
+// end of game
+function quizEnd() {
+    pauseTimer();
+    detailsReset();
+
+    timerTab.setAttribute("style", "visibility: hidden;");
+
+    let mainHeading = document.createElement("p");
+    mainHeading.setAttribute("id","main-heading");
+    mainHeading.textContent = "Game Over!";
+
+    // creates instructions element
+    let instructions = document.createElement("p");
+    instructions.setAttribute("id","instructions");
+    instructions.textContent = "Final Score" + score;
+
+    let playQuizAgain = document.createElement("button");
+    playQuizAgain.setAttribute("id","playQuizAgain");
+    playQuizAgain.setAttribute("class","btn");
+    playQuizAgain.textContent = "Restart Quiz";
+
+    // user input, initials for scores page
+    let par = document.createElement("p");
+
+    let playerInitials = document.createElement("label");
+    playerInitials.setAttribute("for","userInitials");
+    playerInitials.textContent = "Please Enter Your Initials";
+
+    let initialsUserInput = document.createElement("input");
+    initialsUserInput.setAttribute("id","userInitials");
+    initialsUserInput.setAttribute("name","userInitials");
+    initialsUserInput.setAttribute("minlength","2");
+    initialsUserInput.setAttribute("maxlength","3");
+    initialsUserInput.setAttribute("size","2");
+
+    mainContent.appendChild(mainHeading);
+    mainContent.appendChild(instructions);
+    mainContent.appendChild(playerInitials);
+    mainContent.appendChild(initialsUserInput);
+    mainContent.appendChild(par);
+    mainContent.appendChild(playQuizAgain);
+
+    playQuizAgain.addEventListener("click", init);
 }
 
 // Event listeners/Buttons
