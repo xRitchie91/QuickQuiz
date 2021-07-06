@@ -1,0 +1,23 @@
+body {
+    background-color: cornflowerblue;
+}
+
+.h1, .h2 {
+    color: ghostwhite;
+    background-color: cornflowerblue;
+    text-align: center;
+}
+
+.start {
+    background-color: cornflowerblue;
+    color: ghostwhite;
+}
+
+.restart-quiz,
+.topscores {
+    float: center;
+}
+
+.content {
+    float: none;
+}
