@@ -174,7 +174,7 @@ function displayAnswer(cur) {
         }
     }
     // allows user to see final score afte quiz
-    setTimeout(startQuestions,700);
+    setTimeout(startQuestions, 700);
 }
 
 function setQuizTimer() {
@@ -184,7 +184,7 @@ function setQuizTimer() {
 
 function renderTimer() {
     countdown.textContent = quizCountdown - quizElapsedTime;
-    if ((quizCountdown - quizElapsedTime) <1) {
+    if ((quizCountdown - quizElapsedTime) < 1) {
         quizEnd();
     }
 }
@@ -192,8 +192,8 @@ function renderTimer() {
 function startQuizCountdown() {
     setQuizTimer();
 
-    quizInterval = setInterval(function() {
-        quizElapsedTime+1;
+    quizInterval = setInterval(function () {
+        quizElapsedTime + 1;
         renderTimer();
     }, 700);
 }
@@ -211,32 +211,32 @@ function quizEnd() {
     timerTab.setAttribute("style", "visibility: hidden;");
 
     let mainHeading = document.createElement("p");
-    mainHeading.setAttribute("id","main-heading");
+    mainHeading.setAttribute("id", "main-heading");
     mainHeading.textContent = "Game Over!";
 
     // creates instructions element
     let instructions = document.createElement("p");
-    instructions.setAttribute("id","instructions");
+    instructions.setAttribute("id", "instructions");
     instructions.textContent = "Final Score" + score;
 
     let playQuizAgain = document.createElement("button");
-    playQuizAgain.setAttribute("id","playQuizAgain");
-    playQuizAgain.setAttribute("class","btn");
+    playQuizAgain.setAttribute("id", "playQuizAgain");
+    playQuizAgain.setAttribute("class", "btn");
     playQuizAgain.textContent = "Restart Quiz";
 
     // user input, initials for scores page
     let par = document.createElement("p");
 
     let playerInitials = document.createElement("label");
-    playerInitials.setAttribute("for","userInitials");
+    playerInitials.setAttribute("for", "userInitials");
     playerInitials.textContent = "Please Enter Your Initials";
 
     let initialsUserInput = document.createElement("input");
-    initialsUserInput.setAttribute("id","userInitials");
-    initialsUserInput.setAttribute("name","userInitials");
-    initialsUserInput.setAttribute("minlength","2");
-    initialsUserInput.setAttribute("maxlength","3");
-    initialsUserInput.setAttribute("size","2");
+    initialsUserInput.setAttribute("id", "userInitials");
+    initialsUserInput.setAttribute("name", "userInitials");
+    initialsUserInput.setAttribute("minlength", "2");
+    initialsUserInput.setAttribute("maxlength", "3");
+    initialsUserInput.setAttribute("size", "2");
 
     mainContent.appendChild(mainHeading);
     mainContent.appendChild(instructions);
@@ -246,7 +246,62 @@ function quizEnd() {
     mainContent.appendChild(playQuizAgain);
 
     playQuizAgain.addEventListener("click", init);
+
+    // local storage for scores
+    initialsUserInput.addEventListener("input", function () {
+        initialsUserInput.value = initialsUserInput.value.toUpperCase();
+        if (initialsUserInput.value.length === 3) {
+
+            let userScore = [{ type: quizType, name: initialsUserInput.value, score: score }];
+            let savedScores = JSON.parse(localStorage.getItem("topscores"));
+
+            if (savedScores !== null) {
+                savedScores.push(userScore[0]);
+            } else {
+                savedScores = userScore;
+            }
+
+            localStorage.setItem("topscores", JSON.stringify(savedScores));
+            topScores();
+        }
+    });
 }
+
+function topScores() {
+    pauseTimer();
+    detailsReset();
+
+    timerTab.setAttribute("style", "visibility: hidden;");
+
+    let savedScores = JSON.parse(localStorage.getItem("topScores"));
+
+    let mainHeading = document.createElement("h2");
+    mainHeading.setAttribute("id", "mainHeading");
+    mainHeading.textContent = "Quickest Quizzers";
+
+    mainContent.appendChild(heading);
+
+    if (savedScores) !== null) {
+        savedScores.sort((a, b)(a.score < b.score) ? 1 : -1);
+
+        let displayTopScores = 7;
+        if (savedScores.length < 5) {
+            displayTopScores = savedScores.length;
+        }
+
+        for (var i = 0; i < displayTopScores; i + 1) {
+            var sS = savedScores[i];
+            var para = doucment.createElement("p");
+            para.textContent = sS.name + " " + sS.score + " ( " + sS.type + " ) ";
+            mainContent.appendChild(para)
+        }
+    } else {
+        var para = document.createElement("p");
+        para.textContent = sS.name + " " + sS.score + " ( " + sS.type + " )";
+        mainContent.appendChild(para);
+    }
+}
+
 
 // Event listeners/Buttons
 topScores.addEventListener("click", topScores);
