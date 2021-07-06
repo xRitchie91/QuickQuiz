@@ -17,3 +17,4 @@
 [QuickQuiz](https://xritchie91.github.io/QuickQuiz/)
 
 ## Questions
+[xRitchie91](https://github.com/xRitchie91)
