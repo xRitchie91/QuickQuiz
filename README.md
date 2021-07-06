@@ -14,5 +14,6 @@
 ## Demo
 
 ## Deployment
+[QuickQuiz](https://xritchie91.github.io/QuickQuiz/)
 
 ## Questions
