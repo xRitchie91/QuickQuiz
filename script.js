@@ -22,10 +22,21 @@ function init() {
     detailsReset();
     reset();
 
-    // heading
-    let heading = document.createElement("instructions");
+    // main page heading
+    let heading = document.createElement("heading");
     heading.setAttribute("id", "heading");
-    heading.textContent = "QuickQuiz is a timed quiz game."
+    heading.textContent = "QuickQuiz is a timed quiz application."
+
+    // quiz instructions
+    let instructions = document.createElement("instructions");
+    instructions.setAttribute("id", "instructions");
+    instructions.textContent = "You will have 30 seconds starting the quiz. Each correct answer will add time to your countdown timer to complete the quiz."
+
+    // start game button
+    let startQuiz = document.createElement("button");
+    startQuiz.setAttribute("id", "startQuiz");
+    startQuiz.setAttribute("class", "btn");
+    startQuiz.textContent = "Let's Begin!";
 }
 
 
