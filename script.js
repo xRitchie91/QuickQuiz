@@ -11,7 +11,7 @@ var test = false;
 var score = 0;
 var quiz = {};
 
-var quizCountdown = 10;
+var quizCountdown = 30;
 var quizElapsedTime = 0;
 var quizIntervals;
 
@@ -43,9 +43,44 @@ function init() {
     mainContent.appendChild(startQuiz);
 
     startQuiz.addEventListener("click", function () {
-        quizName = "QuickQuiz";
+        quizType = "QuickQuiz";
         playQuiz(questions);
     });
+}
+
+// clears details
+function clearDetails() {
+    mainContent.innerHTML = "";
+}
+
+function reset() {
+    quizType = "";
+    score = 0;
+
+    var quizCountdown = 30;
+    var quizElapsedTime = 0;
+    var quizIntervals;
+}
+
+
+// starts the quiz timer
+quizCountdown = quiz.length;
+if (test) {console.log("duration:",quizCountdown);}
+
+startQuizCountdown();
+renderTimer();
+
+// start questions
+function startQuiz(questions) {
+    if (test) {console.log("startQuiz");}
+
+    quiz = questionOrder(questions);
+
+    // displays the quiz timer
+    countdown.setAttribute("style", "visibility: visible;");
+
+    // takes user to first question
+    startQuestions();
 }
 
 
