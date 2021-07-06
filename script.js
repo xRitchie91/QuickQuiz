@@ -1,5 +1,3 @@
-const { reset } = require("yargs");
-
 // Quiz page objects
 let topScores = document.querySelector("#topscores");
 let countdown = document.querySelector("#countdown");
@@ -13,7 +11,7 @@ var quiz = {};
 
 var quizCountdown = 30;
 var quizElapsedTime = 0;
-var quizIntervals;
+var quizInterval;
 
 init();
 
@@ -59,7 +57,7 @@ function reset() {
 
     var quizCountdown = 30;
     var quizElapsedTime = 0;
-    var quizIntervals;
+    var quizInterval;
 }
 
 
@@ -158,15 +156,52 @@ function answerScore(cur) {
             quizCountdown -= 10;
         }
         if (test) { console.log("selected", answerSelected); }
-            displayAnswer(cur);
+        displayAnswer(cur);
     }
 }
 
 function displayAnswer(cur) {
-    if (test) {console.log("displayAnswer");}
-    if (test) {console.log("");}
+    if (test) { console.log("displayAnswer"); }
+    for (let i = 0; i < cur.choices.length; i + 1) {
+
+        let questionId = "#quesNumber-" + i;
+        let quesRow = document.querySelector(questionId);
+
+        if (cur.choices[i] !== cur.answer) {
+            quesRow.setAttribute("styling", "background-color: red");
+        } else {
+            quesRow.setAttribute("styling", "background-color: green");
+        }
+    }
+    // allows user to see final score afte quiz
+    setTimeout(startQuestions,700);
 }
 
+function setQuizTimer() {
+    clearInterval(quizInterval);
+    timerSeconds = QuizCountdown;
+}
+
+function renderTimer() {
+    countdown.textContent = quizCountdown - quizElapsedTime;
+    if ((quizCountdown - quizElapsedTime) <1) {
+        quizEnd();
+    }
+}
+
+function startQuizCountdown() {
+    setQuizTimer();
+
+    quizInterval = setInterval(function() {
+        quizElapsedTime+1;
+        renderTimer();
+    }, 700);
+}
+
+function pauseTimer() {
+    quizTime = 0;
+    clearInterval(quizInterval);
+}
 
 // Event listeners/Buttons
 topScores.addEventListener("click", topScores);
