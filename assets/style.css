@@ -2,6 +2,9 @@ body {
     background-color: cornflowerblue;
 }
 
+#main-contnet {
+    background-color: slategray;
+}
 .h1, .h2 {
     color: ghostwhite;
     background-color: cornflowerblue;
@@ -16,8 +19,5 @@ body {
 .restart-quiz,
 .topscores {
     float: center;
-}
-
-.content {
-    float: none;
+    color: cornflowerblue
 }
