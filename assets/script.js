@@ -219,10 +219,10 @@ function quizEnd() {
     instructions.setAttribute("id", "instructions");
     instructions.textContent = "Final Score" + score;
 
-    let playQuizAgain = document.createElement("button");
-    playQuizAgain.setAttribute("id", "playQuizAgain");
-    playQuizAgain.setAttribute("class", "btn");
-    playQuizAgain.textContent = "Restart Quiz";
+    let restartQuiz = document.createElement("button");
+    restartQuiz.setAttribute("id", "restartQuiz");
+    restartQuiz.setAttribute("class", "btn");
+    restartQuiz.textContent = "Restart Quiz";
 
     // user input, initials for scores page
     let par = document.createElement("p");
@@ -243,9 +243,9 @@ function quizEnd() {
     mainContent.appendChild(playerInitials);
     mainContent.appendChild(initialsUserInput);
     mainContent.appendChild(par);
-    mainContent.appendChild(playQuizAgain);
+    mainContent.appendChild(restartQuiz);
 
-    playQuizAgain.addEventListener("click", init);
+    restartQuiz.addEventListener("click", init);
 
     // local storage for scores
     initialsUserInput.addEventListener("input", function () {
@@ -267,6 +267,7 @@ function quizEnd() {
     });
 }
 
+// add and view high scores on page after quiz is completed
 function topScores() {
     pauseTimer();
     detailsReset();
@@ -281,7 +282,7 @@ function topScores() {
 
     mainContent.appendChild(heading);
 
-    if (savedScores) !== null) {
+    if (savedScores !== null) {
         savedScores.sort((a, b)(a.score < b.score) ? 1 : -1);
 
         let displayTopScores = 7;
@@ -300,8 +301,16 @@ function topScores() {
         para.textContent = sS.name + " " + sS.score + " ( " + sS.type + " )";
         mainContent.appendChild(para);
     }
+
+    // event listener for start/restart button
+    let restartQuiz = document.createElement("button");
+    restartQuiz.setAttribute("id", "restartQuiz");
+    restartQuiz.setAttribute("id", "btn");
+    restartQuiz.textContent = "Start!";
+
+    mainContent.appendChild(restartQuiz);
+    restartQuiz.addEventListener("click", init);
 }
 
-
-// Event listeners/Buttons
+// button for high scores
 topScores.addEventListener("click", topScores);
