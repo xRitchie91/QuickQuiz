@@ -5,32 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link rel="styleshee" href="./assets/style.css">
+    <title>QuickQuiz</title>
+    <script defer src="./assets/script.js"></script>
     <link rel="icon"
         href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/274/timer-clock_23f2-fe0f.png">
-    <title>QuickQuiz</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<header>
+<header class="header">
     <h1>Welcome to QuickQuiz!</h1>
-    <h2>The timed quiz application</h2>
-</header>
+    <h4>The timed quiz application</h4><br>
+    <section class="buttons">
+        <div>
+            <button class="restart-quiz" id="restart-quiz">Restart Quiz</button>
+            <button class="high-scores" id="high-scores">High Scores</button>
+        </div>
+    </section><br><br>
+    </header>
 
-<body class="body">
-    <section class="main-content">
-        <div class="countdown" id="countdown"></div>
-        <div><button class="start" id="start">Begin Quiz</button></div>
-    </section>
-</body>
+    <body>
 
-<script src="./assets/script.js"></script>
-<script src="./assets/questions.js"></script>
-
-<footer class="footer has-content-centered">
-    <div><button class="restart-quiz" id="restart-quiz">Restart Quiz</button></div>
-    <div><button class="topscores" id="topscores">View High Scores</button></div>
-</footer>
+        <!-- container template that holds all questions and button -->
+      <div class = "container">
+        <div id="question-container" class="hide">
+          <div id="question">
+              <h4>Questions</h4>
+            </div>
+          <div id="select-buttons" class="btn-grid">
+            <button class="btn">Option1</button><br>
+            <button class="btn">Option2</button><br>
+            <button class="btn">Option3</button><br>
+            <button class="btn">Option4</button><br>
+          </div>
+        </div>
+        
+        <!-- next button will remain hidden until needed, only start is visible -->
+        <div class="controls">
+          <button id="start-btn" class="start-btn btn">Start</button>
+          <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+       </div>
+    </body>
 
 </html>

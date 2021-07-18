@@ -1,23 +1,50 @@
-body {
-    background-color: cornflowerblue;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
-#main-contnet {
-    background-color: slategray;
-}
-.h1, .h2 {
-    color: ghostwhite;
+body {
     background-color: cornflowerblue;
+    text-align: center;
+    float: center;
+}
+
+.header {
+    background-color: cornflowerblue;
+    color: white;
     text-align: center;
 }
 
-.start {
+.footer {
     background-color: cornflowerblue;
-    color: ghostwhite;
+    color: white;
+    text-align: center;
 }
 
+/* banner */
+.title, .subtitle {
+    color: ghostwhite;
+    background-color: cornflowerblue;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.question-container {
+    background-color: white;
+}
+
+/* buttons (restart / scores / options) */
 .restart-quiz,
-.topscores {
+.high-scores {
     float: center;
-    color: cornflowerblue
+    background-color: cornflowerblue;
+    color: ghostwhite;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: cornflowerblue;
+    color: ghostwhite;
+    font-weight: bold;
 }
