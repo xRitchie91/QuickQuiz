@@ -12,8 +12,9 @@ body {
 
 .header {
     background-color: cornflowerblue;
-    color: white;
+    color: ghostwhite;
     text-align: center;
+    border-radius: 1em;
 }
 
 .footer {
@@ -30,21 +31,35 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.question-container {
-    background-color: white;
+.container {
+    background-color: lightsteelblue;
+    margin: auto;
+    border-radius: 1em;
+    height: 325px;
+    width: 700px;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: cornflowerblue;
+    font-weight: bold;
 }
 
 /* buttons (restart / scores / options) */
-.restart-quiz,
-.high-scores {
+.restart-quiz.btn,
+.high-scores.btn,
+.start-btn,
+.next-btn {
     float: center;
-    background-color: cornflowerblue;
-    color: ghostwhite;
+    background-color: ghostwhite;
+    color: cornflowerblue;
     font-weight: bold;
+    border-radius: 1em;
 }
 
 .btn {
     background-color: cornflowerblue;
     color: ghostwhite;
     font-weight: bold;
+    border-radius: 1em;
 }

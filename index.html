@@ -13,38 +13,34 @@
 </head>
 
 <header class="header">
-    <h1>Welcome to QuickQuiz!</h1>
+    <h1>QuickQuiz!</h1>
     <h4>The timed quiz application</h4><br>
     <section class="buttons">
         <div>
-            <button class="restart-quiz" id="restart-quiz">Restart Quiz</button>
-            <button class="high-scores" id="high-scores">High Scores</button>
+            <button class="restart-quiz btn" id="restart-quiz btn">Restart Quiz</button>
+            <button class="high-scores btn" id="high-scores btn">High Scores</button>
         </div>
     </section><br><br>
-    </header>
+</header>
 
-    <body>
-
-        <!-- container template that holds all questions and button -->
-      <div class = "container">
-        <div id="question-container" class="hide">
-          <div id="question">
-              <h4>Questions</h4>
-            </div>
-          <div id="select-buttons" class="btn-grid">
-            <button class="btn">Option1</button><br>
-            <button class="btn">Option2</button><br>
-            <button class="btn">Option3</button><br>
-            <button class="btn">Option4</button><br>
-          </div>
+<body>
+    <!-- Timer -->
+<div class="timer" id="timer"></div>
+<div class = "container">
+    <div id="question-container" class="hide">
+      <div id="question">
+          <h2>Question:</h2><br><br>
         </div>
-        
-        <!-- next button will remain hidden until needed, only start is visible -->
-        <div class="controls">
-          <button id="start-btn" class="start-btn btn">Start</button>
-          <button id="next-btn" class="next-btn btn hide">Next</button>
-        </div>
-       </div>
-    </body>
+      <div id="select-buttons" class="btn-grid">
+      </div>
+    </div><br><br>
+    
+    <!-- next button will remain hidden until needed, only start is visible -->
+    <div class="controls">
+      <button id="start-btn" class="start-btn btn">Start</button>
+      <button id="next-btn" class="next-btn btn hide">Next</button>
+    </div>
+   </div>
+</body>
 
 </html>
