@@ -79,7 +79,7 @@ function makeSelection(e) {
     if (randomQuestion.length > currentIndex + 1) {
         nextBtn.classList.remove('hide')
     } else {
-        startBtn.innerText = 'Resart'
+        startBtn.innerText = 'Restart'
         startBtn.classList.remove('hide')
     }
     //reveal next button as soon as question is answered
