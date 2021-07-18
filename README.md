@@ -15,10 +15,10 @@ To start users will click a button on the main page that will start the applicat
 - [Kyle McKinley](https://www.github.com/kjmckinley)
 
 ## Screenshots
-![home](https://user-images.githubusercontent.com/74946954/126056171-11be839e-37cd-4cdc-acf7-a5925669e560.png)
-![start](https://user-images.githubusercontent.com/74946954/126056193-77b3a29f-1df4-4824-bdc9-34b9f9e8df99.png)
-![correct](https://user-images.githubusercontent.com/74946954/126056233-ddc87282-4e81-4d5f-997d-f02b1c187c5b.png)
-![incorrect](https://user-images.githubusercontent.com/74946954/126056291-7cb4261c-2a9f-4936-ad9b-df54a7b9c840.png)
+![Home](https://user-images.githubusercontent.com/74946954/126056361-04bb5abf-b55d-4023-a8f4-241a66e2bb28.png)
+![Start](https://user-images.githubusercontent.com/74946954/126056363-f9a44d0d-f249-4277-ad9a-01c005276ad9.png)
+![Correct](https://user-images.githubusercontent.com/74946954/126056362-997bfc36-41db-4773-a4a7-0630e4f34bff.png)
+![Incorrect](https://user-images.githubusercontent.com/74946954/126056364-3764f36d-259d-4c21-8e64-41a64e31993d.png)
 
 
 ## Deployment
