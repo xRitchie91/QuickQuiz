@@ -14,6 +14,10 @@ To start users will click a button on the main page that will start the applicat
 - [Ritchie Ortiz](https://www.github.com/xRitchie91)
 - [Kyle McKinley](https://www.github.com/kjmckinley)
 
+## Screenshots
+- ![homepage](https://user-images.githubusercontent.com/74946954/126056138-911fd468-db33-44c7-aaf5-9ff2e0a0d850.png)
+- 
+
 ## Deployment
 [QuickQuiz](https://xritchie91.github.io/QuickQuiz/)
 
