@@ -133,9 +133,9 @@ const questions = [
     {
         question: "The condition in an if / else statement is enclosed within ____.",
         answers: [
-            { content: "quotes", correct: false },
-            { content: "curly brackets", correct: false },
-            { content: "parentheses", correct: true },
+            { content: "    quotes     ", correct: false },
+            { content: "curly brackets ", correct: false },
+            { content: "  parentheses  ", correct: true },
             { content: "square brackets", correct: false }
         ]
     },
@@ -143,18 +143,18 @@ const questions = [
         question: "using a/an ___ statement is how you test for a specific condition",
         answers: [
             { content: "switch", correct: false },
-            { content: "for", correct: false },
-            { content: "if", correct: true },
+            { content: " for ", correct: false },
+            { content: " if ", correct: true },
             { content: "select", correct: false }
         ]
     },
     {
         question: "which is not considered a javascript operator?",
         answers: [
-            { content: "delete", correct: false },
-            { content: "typeof", correct: false },
-            { content: "this", correct: true },
-            { content: "new", correct: false }
+            { content: " delete ", correct: false },
+            { content: " typeof ", correct: false },
+            { content: "  this  ", correct: true },
+            { content: "   new  ", correct: false }
         ]
     },
     {
@@ -167,3 +167,5 @@ const questions = [
         ]
     }
 ]
+
+restartQuizBtn.addEventListener('click', startGame)

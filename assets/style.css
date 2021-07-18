@@ -4,6 +4,15 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
+:root {
+    /* unanswered question */
+    --hue-natural: 200;
+    /* incorrect answer */
+    --hue-incorrect: 0;
+    /* correct answer */
+    --hue-correct: 145;
+}
+
 body {
     background-color: cornflowerblue;
     text-align: center;
@@ -55,11 +64,30 @@ p {
     color: cornflowerblue;
     font-weight: bold;
     border-radius: 1em;
+    padding: 5px 10px;
 }
 
 .btn {
-    background-color: cornflowerblue;
-    color: ghostwhite;
-    font-weight: bold;
-    border-radius: 1em;
+    --hue: var(--hue-natural);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+    height: 40px;
+}
+
+.btn:hover {
+    border-color: black;
+    border-radius: 5px;
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+    color: black;
+}
+
+.btn.incorrect {
+    --hue: var(--hue-incorrect);
 }
