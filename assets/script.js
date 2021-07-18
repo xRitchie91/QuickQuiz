@@ -6,37 +6,37 @@ const answerBtnEl = document.getElementById('select-buttons')
 
 //let variables initially set to undefined to be used to jumble the questions
 //so that they don't appear in the same order every time.
-let randomQuestion, currentIndex 
+let randomQ, currentIndex 
 
-// event listener that calls the startGame function when clicked.
-startBtn.addEventListener('click', startGame)
+// calls startQuiz function 
+startBtn.addEventListener('click', startQuiz)
 
-//event listener that calls the nextQuestion function to allow nex 
+//event listener that calls the nextQues function to allow nex 
 //button to function and go to the the currentIndex of the array of questions
 nextBtn.addEventListener('click', () => {
     currentIndex++
-    nextQuestion()
+    nextQues()
 })
 
 // function that reveals a question and options after start has been pressed.
-function startGame() {
+function startQuiz() {
     startBtn.classList.add('hide')
 
-    randomQuestion = questions.sort(() => Math.random() - .5)
+    randomQ = questions.sort(() => Math.random() - .5)
     currentIndex = 0
 
     questionContainerEl.classList.remove('hide')
     // function allocates info for the next question
-    nextQuestion()
+    nextQues()
 }
 
-function nextQuestion() {
+function nextQues() {
     //function call to set everything back to default state
-    refreshQuestion()
-    revealQuestion(randomQuestion[currentIndex])
+    refreshQ()
+    revealQ(randomQ[currentIndex])
 }
 
-function revealQuestion(question) {
+function revealQ(question) {
     //populates question
     questionEl.innerText = question.question
     //populates coresponding possible answers through a loop.
@@ -55,7 +55,7 @@ function revealQuestion(question) {
     })
 }
 
-function refreshQuestion(){
+function refreshQ(){
     statusWipe(document.body)
     //hide next button again
     nextBtn.classList.add('hide')
@@ -76,7 +76,7 @@ function makeSelection(e) {
     })
 
     //make sure the program stops when we run out of questions
-    if (randomQuestion.length > currentIndex + 1) {
+    if (randomQ.length > currentIndex + 1) {
         nextBtn.classList.remove('hide')
     } else {
         startBtn.innerText = 'Restart'
@@ -168,4 +168,4 @@ const questions = [
     }
 ]
 
-restartQuizBtn.addEventListener('click', startGame)
+restartQuizBtn.addEventListener('click', startQuiz)
