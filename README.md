@@ -20,7 +20,7 @@ To start users will click a button on the main page that will start the applicat
 ![Start](https://user-images.githubusercontent.com/74946954/126056363-f9a44d0d-f249-4277-ad9a-01c005276ad9.png)
 ![Correct](https://user-images.githubusercontent.com/74946954/126056362-997bfc36-41db-4773-a4a7-0630e4f34bff.png)
 ![Incorrect](https://user-images.githubusercontent.com/74946954/126056364-3764f36d-259d-4c21-8e64-41a64e31993d.png)
-
+![Restart](https://user-images.githubusercontent.com/74946954/126056827-43d6af16-7b76-455f-9dff-531c8bb567f9.png)
 
 ## Deployment
 [QuickQuiz](https://xritchie91.github.io/QuickQuiz/)
