@@ -7,6 +7,7 @@ To start users will click a button on the main page that will start the applicat
 ## Table of Contents
 - [Description](#Description)
 - [Contributors](#Contributors)
+- [Screenshots](#Screenshots)
 - [Deployed Application](#Deployment)
 - [Reach Out](#Questions)
 
